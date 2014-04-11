@@ -88,7 +88,7 @@ public class CameraMovement : MonoBehaviour
 		// Create a rotation based on the relative position of the player being the forward vector.
 		Quaternion lookAtRotation = Quaternion.LookRotation(relPlayerPosition, Vector3.up);
 		
-		// Lerp the camera's rotation between it's current rotation and the rotation that looks at the player.
+		// Lerp the camera's rotation between its current rotation and the rotation that looks at the player.
 		transform.rotation = Quaternion.Lerp(transform.rotation, lookAtRotation, smooth * Time.deltaTime);
 	}
 }
