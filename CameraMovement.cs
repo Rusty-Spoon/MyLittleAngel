@@ -27,7 +27,7 @@ public class CameraMovement : MonoBehaviour
 	{
 		// The standard position of the camera is the relative position of the camera from the player.
 		Vector3 standardPos = player.position + relCameraPos;
-		standardPos.x = 6;
+		standardPos.x = 8;
 		
 		// The abovePos is directly above the player at the same distance as the standard position.
 		Vector3 abovePos = player.position + Vector3.up * relCameraPosMag;
