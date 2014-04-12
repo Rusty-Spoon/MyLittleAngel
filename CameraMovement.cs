@@ -4,7 +4,7 @@ using System.Collections;
 public class CameraMovement : MonoBehaviour
 {
 	public float smooth = 1.5f;         // The relative speed at which the camera will catch up.
-	
+	public float distance = 10;			// The distance of the camera from the character. Further the distance, lower the angle.
 	
 	private Transform player;           // Reference to the player's transform.
 	private Vector3 relCameraPos;       // The relative position of the camera from the player.
@@ -27,25 +27,32 @@ public class CameraMovement : MonoBehaviour
 	{
 		// The standard position of the camera is the relative position of the camera from the player.
 		Vector3 standardPos = player.position + relCameraPos;
-		standardPos.x = 8;
+		standardPos.x = distance;
 		
 		// The abovePos is directly above the player at the same distance as the standard position.
 		Vector3 abovePos = player.position + Vector3.up * relCameraPosMag;
 		
 		// An array of 5 points to check if the camera can see the player.
-		Vector3[] checkPoints = new Vector3[5];
+		Vector3[] checkPoints = new Vector3[9];
 		
 		// The first is the standard position of the camera.
 		checkPoints[0] = standardPos;
 		
 		// The next three are 25%, 50% and 75% of the distance between the standard position and abovePos.
-		checkPoints[1] = Vector3.Lerp(standardPos, abovePos, 0.25f);
-		checkPoints[2] = Vector3.Lerp(standardPos, abovePos, 0.5f);
-		checkPoints[3] = Vector3.Lerp(standardPos, abovePos, 0.75f);
+		checkPoints[1] = Vector3.Lerp(standardPos, abovePos, 0.05f);
+		checkPoints[2] = Vector3.Lerp(standardPos, abovePos, 0.10f);
+		checkPoints[3] = Vector3.Lerp(standardPos, abovePos, 0.20f);
+		checkPoints[4] = Vector3.Lerp(standardPos, abovePos, 0.30f);
+		checkPoints[5] = Vector3.Lerp(standardPos, abovePos, 0.40f);
+		checkPoints[6] = Vector3.Lerp(standardPos, abovePos, 0.50f);
+		checkPoints[7] = Vector3.Lerp(standardPos, abovePos, 0.60f);
 		
 		// The last is the abovePos.
-		checkPoints[4] = abovePos;
-		
+		checkPoints[8].x = abovePos.x * 0.70f;
+		checkPoints[8].y = abovePos.y * 0.70f;
+		checkPoints[8].z = abovePos.z * 0.70f;
+
+
 		// Run through the check points...
 		for(int i = 0; i < checkPoints.Length; i++)
 		{
