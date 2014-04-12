@@ -1,7 +1,7 @@
 ﻿#pragma strict
 public var lateralMovement : float;
-var leftButton : String;
-var rightButton : String;
+var leftButton : String = "a";
+var rightButton : String = "d";
 
 var forward : Vector3;
 var dt : double;
@@ -14,9 +14,7 @@ var moveSpeed : double;
 
 function Start () 
 {
-	leftButton = "a";
-	rightButton = "d";
-	
+
 	forward = new Vector3(0, 0, 1);
 	dt = Time.deltaTime;
 	
