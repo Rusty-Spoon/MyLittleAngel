@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<SearchIndexes Version="1.0">
+    <Documents>
+        <Document ID="3">
+            <Title>Cover Page</Title>
+            <Text>
+
+
+
+My Little Angel
+
+
+
+
+
+Design Document
+
+
+
+
+
+Rusty Spoon
+
+
+
+</Text>
+        </Document>
+        <Document ID="8">
+            <Title>Build Order</Title>
+            <Text>0	TitleScreen
+1	SewerScene
+2	GameOver
+3	EndTitles
+4	Controls
+
+Links
+Intro
+0 -&gt; 4 -&gt; 1
+
+Win
+1-&gt;3
+
+Lose
+1-&gt;2-&gt;3</Text>
+        </Document>
+        <Document ID="6">
+            <Title>Project Setup</Title>
+        </Document>
+        <Document ID="4">
+            <Title>Contents</Title>
+        </Document>
+        <Document ID="7">
+            <Title>Build Settings</Title>
+        </Document>
+        <Document ID="5">
+            <Title>Tech</Title>
+        </Document>
+    </Documents>
+</SearchIndexes>
